@@ -1,0 +1,31 @@
+doctype html
+html 
+    head 
+        title='Peluches Custom Object List | Integrating With HubSpot I Practicum'
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css")
+    body
+        main
+            div(class="container")
+                header(class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom")
+                    a(class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none", href="/")
+                        span(class="fs-4") Home
+
+                h2 Custom Object Table
+                div#alink
+                    a(href=baseURI) Add/Update the Peluches
+                div#table-center
+                    table(class="table table-striped")
+                        thead
+                            tr
+                                th Name
+                                th Color
+                                th Type
+                        tbody
+                        each Peluches in data
+                            tr
+                                td #{Peluches.properties.name}
+                                td #{Peluches.properties.color}
+                                td #{Peluches.properties.type}
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL")
